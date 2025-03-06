@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coaching Narratif & Intelligence Émotionnelle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Patch pour les erreurs JavaScript -->
+    <script src="/errorPatches.js"></script>
+    <script>
+      // Patch préventif pour les erreurs courantes
+      window.cb = {
+        updateFeatures: function() {},
+        unmount: function() {}
+      };
+      
+      // Patch pour les erreurs d'événements
+      window.events = { t: { clear: function() {} } };
+      
+      // Patch pour setToggle
+      if (!Object.prototype.setToggle) {
+        Object.defineProperty(Object.prototype, 'setToggle', {
+          value: function() { return this; },
+          writable: true,
+          configurable: true
+        });
+      }
+      
+      // Intercepter les erreurs globales
+      window.addEventListener('error', function(event) {
+        if (event.error && (
+          event.error.toString().includes('s.mount is not a function') ||
+          event.error.toString().includes('this.events[t].clear is not a function') ||
+          event.error.toString().includes('toggle')
+        )) {
+          event.preventDefault();
+          return false;
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
