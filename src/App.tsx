@@ -14,9 +14,8 @@ import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
-import { FunctionTest } from './components/FunctionTest';
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <Header />
@@ -26,9 +25,6 @@ function App() {
             <OfferDetail />
             <Footer />
           </>
-        } />
-        <Route path="/test-functions" element={
-          <FunctionTest />
         } />
         <Route path="/" element={
           <div className="min-h-screen bg-white">
@@ -50,6 +46,6 @@ function App() {
       </Routes>
     </>
   );
-}
+};
 
 export default App;

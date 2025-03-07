@@ -18,6 +18,8 @@ const USE_MOCK_CRM = import.meta.env.VITE_USE_MOCK_CRM === 'true';
 // Mock CRM implementation
 const mockCrmSubmit = async (data: ContactData): Promise<{ success: boolean; id?: string; message?: string }> => {
   try {
+    console.log('Mock CRM submission:', data);
+    
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 800));
     
@@ -25,7 +27,7 @@ const mockCrmSubmit = async (data: ContactData): Promise<{ success: boolean; id?
     return {
       success: true,
       id: `mock-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
-      message: 'Contact successfully added to mock CRM'
+      message: `Contact successfully added to mock CRM: ${data.email}`
     };
   } catch (error) {
     return { 
@@ -56,7 +58,7 @@ const hubspotSubmit = async (data: ContactData): Promise<{ success: boolean; id?
         message: data.message || ''
       }
     };
-    
+
     // Use the Netlify function proxy
     const response = await axios({
       method: 'POST',

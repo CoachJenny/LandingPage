@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { Menu, X, Calendar, Settings } from 'lucide-react';
+import { Menu, X, Calendar } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,14 +57,6 @@ export const Header: React.FC = () => {
               <Calendar className="w-4 h-4 mr-2" />
               <span>Réserver un appel</span>
             </a>
-            <Link
-              to="/test-functions"
-              className="inline-flex items-center px-4 py-2 bg-primary-light hover:bg-primary 
-                text-white rounded-full transition-all transform hover:scale-105 border border-white/20"
-            >
-              <Settings className="w-4 h-4 mr-2" />
-              <span>Test</span>
-            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -114,15 +106,6 @@ export const Header: React.FC = () => {
                 <Calendar className="w-4 h-4 mr-2" />
                 <span>Réserver un appel</span>
               </a>
-              <Link
-                to="/test-functions"
-                className="inline-flex items-center px-4 py-2 bg-primary-light hover:bg-primary 
-                  text-white rounded-full transition-all w-full justify-center border border-white/20"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Settings className="w-4 h-4 mr-2" />
-                <span>Test</span>
-              </Link>
             </nav>
           </div>
         </div>
