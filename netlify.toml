@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Handle OPTIONS preflight requests for CORS
+[[redirects]]
+  from = "/hubspot-api/*"
+  to = "/.netlify/functions/hubspot/:splat"
+  status = 200
+  force = true
+
+# Make sure SPA routes work correctly
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

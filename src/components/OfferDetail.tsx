@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useParams, Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { coachingOffers } from '../data/content';
-import { ArrowLeft, Check, Clock, Calendar, Users, Target, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Check, Clock, Users, Target, ArrowRight } from 'lucide-react';
+
+type OfferParams = {
+  id: string;
+};
 
 export const OfferDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<OfferParams>();
   const offer = coachingOffers.find(o => o.id === id);
-  const [selectedOption, setSelectedOption] = useState(0);
 
   if (!offer) {
     return (
@@ -29,7 +32,7 @@ export const OfferDetail: React.FC = () => {
   }
 
   // Function to render text with WhatsApp links
-  const renderWithWhatsAppLinks = (text: string) => {
+  const renderWithWhatsAppLinks = (text: string): React.ReactNode => {
     if (!text.includes('WhatsApp')) return text;
     
     const parts = text.split(/(Suivi WhatsApp)/g);
@@ -50,60 +53,54 @@ export const OfferDetail: React.FC = () => {
   };
 
   // Custom content based on offer ID
-  let customContent = {
+  const customContent = {
     description: "",
-    process: [],
-    forWhom: []
+    process: [] as string[],
+    forWhom: [] as string[]
   };
 
   if (id === "etincelle") {
-    customContent = {
-      description: "Une séance intensive pour identifier ce qui vous freine et amorcer le changement. Idéal pour découvrir le coaching narratif et ouvrir de nouvelles perspectives.",
-      process: [
-        "Questionnaire préparatoire pour maximiser notre temps ensemble",
-        "Séance de 60 minutes en visioconférence",
-        "Document de synthèse pour ancrer vos prises de conscience",
-        "Option : Suivi WhatsApp pendant 1 semaine",
-        "Option : Call de suivi une semaine après"
-      ],
-      forWhom: [
-        "Vous souhaitez expérimenter le coaching narratif",
-        "Vous avez un blocage spécifique à explorer",
-        "Vous cherchez une première mise en mouvement"
-      ]
-    };
+    customContent.description = "Une séance intensive pour identifier tes blocages et amorcer le changement. Idéal pour découvrir le coaching narratif et ouvrir de nouvelles perspectives.";
+    customContent.process = [
+      "Questionnaire préparatoire pour maximiser notre temps ensemble",
+      "Séance de 60 minutes en visioconférence",
+      "Document de synthèse pour ancrer vos prises de conscience",
+      "Option : Suivi WhatsApp pendant 1 semaine",
+      "Option : Call de suivi une semaine après"
+    ];
+    customContent.forWhom = [
+      "Vous souhaitez expérimenter le coaching narratif",
+      "Vous avez un blocage spécifique à explorer",
+      "Vous cherchez une première mise en mouvement"
+    ];
   } else if (id === "lightwave") {
-    customContent = {
-      description: "Un programme en 5 séances pour dépasser ce qui vous freine et créer un changement durable. Une approche progressive, qui vous permet d'explorer, d'ancrer et d'avancer avec clarté.",
-      process: [
-        "5 séances de 90 min en visioconférence",
-        "Documentation narrative pour ancrer vos prises de conscience",
-        "Exercices narratifs sélectionnés spécialement pour vous",
-        "Option : Inventaire EQ-i et débriefing: 169€",
-        "Option : Suivi WhatsApp entre les séances 110€"
-      ],
-      forWhom: [
-        "Vous voulez avancer en profondeur, sans solution toute faite",
-        "Vous êtes prêt·e à investir du temps et de l'énergie dans ce travail",
-        "Vous cherchez un accompagnement structuré et progressif"
-      ]
-    };
+    customContent.description = "Un programme en 5 séances pour dépasser ce qui vous freine et créer un changement durable. Une approche progressive, qui vous permet d'explorer, d'ancrer et d'avancer avec clarté.";
+    customContent.process = [
+      "5 séances de 90 min en visioconférence",
+      "Documentation narrative pour ancrer vos prises de conscience",
+      "Exercices narratifs sélectionnés spécialement pour vous",
+      "Option : Inventaire EQ-i et débriefing: 169€",
+      "Option : Suivi WhatsApp entre les séances 110€"
+    ];
+    customContent.forWhom = [
+      "Vous voulez avancer en profondeur, sans solution toute faite",
+      "Vous êtes prêt·e à investir du temps et de l'énergie dans ce travail",
+      "Vous cherchez un accompagnement structuré et progressif"
+    ];
   } else if (id === "lightning") {
-    customContent = {
-      description: "Un accompagnement en 10 séances pour transformer en profondeur votre leadership et votre rapport à vous-même. Un espace exigeant et soutenant, conçu pour aller au bout de votre réflexion, affiner votre posture et créer un impact durable.",
-      process: [
-        "10 séances individuelles de coaching",
-        "Documentation narrative pour ancrer vos prises de conscience",
-        "Suivi WhatsApp tout au long du programme*",
-        "Inventaire EQ-i Leadership",
-        "2 séances de débriefing spécifiques"
-      ],
-      forWhom: [
-        "Vous voulez aller au bout de votre transformation",
-        "Vous cherchez un accompagnement structurant et exigeant",
-        "Vous voulez développer un leadership aligné, impactant et fluide"
-      ]
-    };
+    customContent.description = "Un accompagnement en 10 séances pour transformer en profondeur votre leadership et votre rapport à vous-même. Un espace exigeant et soutenant, conçu pour aller au bout de votre réflexion, affiner votre posture et créer un impact durable.";
+    customContent.process = [
+      "10 séances individuelles de coaching",
+      "Documentation narrative pour ancrer vos prises de conscience",
+      "Suivi WhatsApp tout au long du programme*",
+      "Inventaire EQ-i Leadership",
+      "2 séances de débriefing spécifiques"
+    ];
+    customContent.forWhom = [
+      "Vous voulez aller au bout de votre transformation",
+      "Vous cherchez un accompagnement structurant et exigeant",
+      "Vous voulez développer un leadership aligné, impactant et fluide"
+    ];
   }
 
   return (
@@ -151,7 +148,7 @@ export const OfferDetail: React.FC = () => {
                 Déroulement du programme
               </h2>
               <div className="space-y-4">
-                {customContent.process.map((step, index) => (
+                {customContent.process.map((step: string, index: number) => (
                   <div key={index} className="flex items-start">
                     <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mr-4">
                       <span className="text-white font-semibold">{index + 1}</span>
@@ -176,7 +173,7 @@ export const OfferDetail: React.FC = () => {
                 Pour qui ?
               </h2>
               <div className="space-y-4">
-                {customContent.forWhom.map((item, index) => (
+                {customContent.forWhom.map((item: string, index: number) => (
                   <div key={index} className="flex items-start">
                     <Check className="w-5 h-5 text-accent-light mr-4 flex-shrink-0 mt-1" />
                     <p className="text-white/90">{item}</p>
@@ -197,7 +194,7 @@ export const OfferDetail: React.FC = () => {
                 Bénéfices
               </h2>
               <div className="space-y-4">
-                {offer.benefits.map((benefit, index) => (
+                {offer.benefits.map((benefit: string, index: number) => (
                   <div key={index} className="flex items-start">
                     <div className="w-2 h-2 bg-accent rounded-full mr-4 mt-2 flex-shrink-0" />
                     <p className="text-white/90">{benefit}</p>
@@ -267,7 +264,7 @@ export const OfferDetail: React.FC = () => {
                             <span className="text-2xl font-bold text-accent-light">{option.price}</span>
                           </div>
                           <ul className="space-y-2">
-                            {option.includes.map((item, i) => (
+                            {option.includes.map((item: string, i: number) => (
                               <li key={i} className="flex items-start text-sm text-white/80">
                                 <Check className="w-4 h-4 text-accent-light mr-2 flex-shrink-0 mt-0.5" />
                                 <span>{renderWithWhatsAppLinks(item)}</span>
