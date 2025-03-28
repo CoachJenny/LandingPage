@@ -2,22 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mobile-first media queries */
+/* Base styles */
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
   }
   
   body {
-    @apply antialiased;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
   }
 }
 
-/* Custom scrollbar for webkit browsers */
-@supports selector(::-webkit-scrollbar) {
+/* Custom components */
+@layer components {
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-light;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-20;
+  }
+
+  .heading-xl {
+    @apply text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-display;
+  }
+
+  .heading-lg {
+    @apply text-2xl xs:text-3xl md:text-4xl font-display;
+  }
+
+  .heading-md {
+    @apply text-xl xs:text-2xl md:text-3xl font-display;
+  }
+
+  .text-body {
+    @apply text-base md:text-lg;
+  }
+
+  .text-small {
+    @apply text-sm md:text-base;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-area-left {
+    padding-left: env(safe-area-inset-left);
+  }
+}
+
+/* Custom scrollbar */
+@media (min-width: 768px) {
   ::-webkit-scrollbar {
-    @apply w-2;
+    width: 8px;
   }
   
   ::-webkit-scrollbar-track {
@@ -25,19 +84,12 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-accent/20 rounded-full hover:bg-accent/30 transition-colors;
-  }
-}
-
-/* Improved touch targets for mobile */
-@layer components {
-  .touch-target {
-    @apply min-h-[44px] min-w-[44px];
+    @apply bg-accent/20 rounded-full transition-colors hover:bg-accent/30;
   }
 }
 
 /* Prevent text size adjustment on orientation change */
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
   html {
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
