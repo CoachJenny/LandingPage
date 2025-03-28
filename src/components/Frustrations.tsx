@@ -5,7 +5,7 @@ import { HashLink } from 'react-router-hash-link';
 
 export const Frustrations: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary-light relative overflow-hidden">
+    <section id="frustrations" className="py-20 bg-gradient-to-br from-primary via-primary to-primary-light relative overflow-hidden">
       {/* Cercles décoratifs en arrière-plan */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-accent/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent-light/20 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl animate-pulse"></div>

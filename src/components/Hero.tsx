@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { HashLink } from 'react-router-hash-link';
+import { Link as ScrollLink } from 'react-scroll';
 
 export const Hero: React.FC = () => {
   return (
@@ -28,13 +28,17 @@ export const Hero: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <HashLink
-              to="/#frustrations"
-              className="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent-light text-white text-lg font-semibold rounded-full transition-all"
+            <ScrollLink
+              to="frustrations"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={800}
+              className="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent-light text-white text-lg font-semibold rounded-full transition-all cursor-pointer"
             >
               Tu veux voir si je parle de toi ?
               <ArrowDown className="ml-2 h-5 w-5" />
-            </HashLink>
+            </ScrollLink>
             <p className="text-white/80 mt-4">→ Lis ça, tu vas te reconnaître</p>
           </motion.div>
         </motion.div>

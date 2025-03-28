@@ -1,79 +1,88 @@
 {
-  "hash": "dcbce061",
+  "hash": "f33a2ad6",
   "configHash": "263b1d7b",
-  "lockfileHash": "ede57fbf",
-  "browserHash": "17e7d370",
+  "lockfileHash": "c0518570",
+  "browserHash": "b1101d91",
   "optimized": {
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "236a0255",
+      "fileHash": "c7c088e6",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "eb26a828",
+      "fileHash": "9ef10a95",
       "needsInterop": true
     },
     "react/jsx-runtime": {
       "src": "../../node_modules/react/jsx-runtime.js",
       "file": "react_jsx-runtime.js",
-      "fileHash": "2486b646",
+      "fileHash": "2b3631f7",
       "needsInterop": true
     },
     "@headlessui/react": {
       "src": "../../node_modules/@headlessui/react/dist/headlessui.esm.js",
       "file": "@headlessui_react.js",
-      "fileHash": "6179486e",
+      "fileHash": "c5fa39bd",
       "needsInterop": false
     },
     "axios": {
       "src": "../../node_modules/axios/index.js",
       "file": "axios.js",
-      "fileHash": "0e212822",
+      "fileHash": "d5036c2d",
       "needsInterop": false
     },
     "framer-motion": {
       "src": "../../node_modules/framer-motion/dist/es/index.mjs",
       "file": "framer-motion.js",
-      "fileHash": "4e01158a",
+      "fileHash": "fe550c39",
       "needsInterop": false
     },
     "lucide-react": {
       "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
       "file": "lucide-react.js",
-      "fileHash": "23804c4e",
+      "fileHash": "e008ebf3",
       "needsInterop": false
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "b7d810fd",
+      "fileHash": "2c0b859e",
       "needsInterop": true
     },
     "react-router-dom": {
       "src": "../../node_modules/react-router-dom/dist/index.js",
       "file": "react-router-dom.js",
-      "fileHash": "ede4a274",
+      "fileHash": "7f831cde",
       "needsInterop": false
     },
     "react-router-hash-link": {
       "src": "../../node_modules/react-router-hash-link/dist/react-router-hash-link.esm.js",
       "file": "react-router-hash-link.js",
-      "fileHash": "09f9e64c",
+      "fileHash": "75b95844",
       "needsInterop": false
+    },
+    "react-scroll": {
+      "src": "../../node_modules/react-scroll/modules/index.js",
+      "file": "react-scroll.js",
+      "fileHash": "93248c6a",
+      "needsInterop": true
     },
     "react-toastify": {
       "src": "../../node_modules/react-toastify/dist/react-toastify.esm.mjs",
       "file": "react-toastify.js",
-      "fileHash": "0b395e2f",
+      "fileHash": "c19f2119",
       "needsInterop": false
     }
   },
   "chunks": {
     "chunk-YMZZ7VY4": {
       "file": "chunk-YMZZ7VY4.js"
+    },
+    "chunk-X3MDYGI3": {
+      "file": "chunk-X3MDYGI3.js"
     },
     "chunk-IHRST5LR": {
       "file": "chunk-IHRST5LR.js"

@@ -23,8 +23,12 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="text-xl font-display text-white">
-            Jennifer Perrault
+          <Link to="/" className="block">
+            <img 
+              src="/public/LogoNahara.png" 
+              alt="Nahara Coaching" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Navigation - Desktop */}
@@ -104,7 +108,7 @@ export const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Calendar className="w-4 h-4 mr-2" />
-                <span>Réserve ton coaching gratuit</span>
+                <span>Réserver un appel</span>
               </a>
             </nav>
           </div>
