@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { HashLink } from 'react-router-hash-link';
 
 export const Hero: React.FC = () => {
   return (
@@ -22,15 +23,20 @@ export const Hero: React.FC = () => {
             mais la frustration persiste, te freinant dans ton élan.
           </p>
 
-          <motion.a
-            href="#quiz"
-            className="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent-light text-white text-lg font-semibold rounded-full transition-all transform hover:scale-105"
+          <motion.div
+            className="flex flex-col items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Prêt.e à comprendre ce qui te freine ? Fais le quizz !
-            <ArrowDown className="ml-2 h-5 w-5" />
-          </motion.a>
+            <HashLink
+              to="/#frustrations"
+              className="inline-flex items-center px-8 py-4 bg-accent hover:bg-accent-light text-white text-lg font-semibold rounded-full transition-all"
+            >
+              Tu veux voir si je parle de toi ?
+              <ArrowDown className="ml-2 h-5 w-5" />
+            </HashLink>
+            <p className="text-white/80 mt-4">→ Lis ça, tu vas te reconnaître</p>
+          </motion.div>
         </motion.div>
       </div>
 
