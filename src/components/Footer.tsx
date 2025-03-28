@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { Linkedin, Mail, Heart } from 'lucide-react';
-import { LegalNotice } from './LegalNotice.tsx';
+import { LegalNotice } from './LegalNotice';
 
 export const Footer: React.FC = () => {
   const [isLegalNoticeOpen, setIsLegalNoticeOpen] = useState(false);
@@ -106,6 +106,14 @@ export const Footer: React.FC = () => {
                 >
                   Mentions légales
                 </button>
+              </li>
+              <li>
+                <Link 
+                  to="/politique-de-confidentialite"
+                  className="text-white/70 hover:text-accent transition-colors"
+                >
+                  Politique de confidentialité
+                </Link>
               </li>
               <li>
                 <a 

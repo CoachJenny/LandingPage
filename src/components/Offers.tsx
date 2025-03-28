@@ -82,7 +82,7 @@ export const Offers: React.FC = () => {
         >
           <h2 className="text-4xl font-display mb-6 text-white">Des accompagnements pensés pour que tu bouges (pour de vrai).</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Chaque parcours est unique. Lequel résonne avec ce que tu veux aujourd'hui ?
+            Chaque parcours est unique. Lequel résonne avec ce que tu veux ?
           </p>
         </motion.div>
         

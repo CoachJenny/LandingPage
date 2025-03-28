@@ -127,6 +127,43 @@ export const OfferDetail: React.FC = () => {
             <p className="text-xl text-white/90 max-w-2xl">
               {customContent.description}
             </p>
+
+            {/* Lightning-specific content block */}
+            {id === "lightning" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="mt-12 bg-gradient-to-br from-accent/20 to-accent-light/20 backdrop-blur-sm 
+                  rounded-2xl p-8 border border-white/10 max-w-3xl"
+              >
+                <h2 className="text-2xl font-display text-white mb-6">
+                  Ce que tu fais différemment après cet accompagnement :
+                </h2>
+                <ul className="space-y-4">
+                  {[
+                    "Tu recadres sans te crisper. Ton équipe sait où tu vas. Et elle suit.",
+                    "Tu prends des décisions difficiles sans tourner en boucle trois semaines.",
+                    "Tu fais passer ton point de vue au Comex, sans t'adapter à chaque regard.",
+                    "Tu tiens une posture claire — même en terrain hostile, même sous pression.",
+                    "Tu ne laisses plus tes doutes piloter ton impact : tu choisis ce que tu veux porter.",
+                    "Tu redeviens moteur dans les discussions stratégiques. Tu n'exécutes plus, tu penses.",
+                    "Tu n'as plus besoin d'en faire trois fois trop pour être respecté·e."
+                  ].map((item, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4 + (index * 0.1) }}
+                      className="flex items-start text-white/90"
+                    >
+                      <Check className="w-5 h-5 text-accent-light mr-3 flex-shrink-0 mt-1" />
+                      <span className="text-lg">{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
           </motion.div>
         </div>
       </div>

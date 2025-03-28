@@ -1,4 +1,18 @@
-// ... (garder tout le code existant jusqu'à l'interface Testimonial)
+export interface CoachingOffer {
+  id: string;
+  title: string;
+  icon: string;
+  description: string;
+  benefits: string[];
+  format: string;
+  price: string;
+  duration: string;
+  options: {
+    title: string;
+    price: string;
+    includes: string[];
+  }[];
+}
 
 export interface Testimonial {
   id: number;
@@ -7,4 +21,14 @@ export interface Testimonial {
   quote: string;
 }
 
-// ... (garder le reste du code)
+export interface QuizQuestion {
+  id: number;
+  question: string;
+  type: 'multiple' | 'open';
+  options: string[];
+}
+
+export interface QuizSynthesis {
+  mainText: string;
+  recommendedOffer: 'etincelle' | 'lightwave' | 'lightning';
+}
