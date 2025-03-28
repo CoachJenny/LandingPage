@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a 
-                  href="/cgv.pdf" 
+                  href="/cgv.pdf.pdf" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-accent transition-colors"

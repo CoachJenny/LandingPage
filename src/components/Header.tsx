@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
           {/* Logo and Name */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/public/LogoNahara.png" 
+              src="/LogoNahara.png" 
               alt="Nahara Coaching" 
               className="h-8 w-auto"
             />
