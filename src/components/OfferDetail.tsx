@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { coachingOffers } from '../data/content';
-import { ArrowLeft, Check, Clock, Users, Target, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Check, Clock, Users, ArrowRight } from 'lucide-react';
 
 type OfferParams = {
   id: string;
@@ -18,14 +18,14 @@ export const OfferDetail: React.FC = () => {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-primary-light text-white">
         <div className="text-center">
           <h2 className="text-3xl font-display mb-6">Programme non trouvé</h2>
-          <Link 
-            to="/" 
+          <HashLink 
+            to="/#offers" 
             className="inline-flex items-center px-6 py-3 bg-white text-primary rounded-full
               hover:bg-white/90 transition-all duration-300"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
-            Retour à l'accueil
-          </Link>
+            Retour aux offres
+          </HashLink>
         </div>
       </div>
     );
@@ -56,51 +56,87 @@ export const OfferDetail: React.FC = () => {
   const customContent = {
     description: "",
     process: [] as string[],
-    forWhom: [] as string[]
+    forWhom: [] as string[],
+    impactBlocks: [] as { title: string, items: string[], conclusion?: string }[]
   };
 
   if (id === "etincelle") {
     customContent.description = "Une séance intensive pour identifier tes blocages et amorcer le changement. Idéal pour découvrir le coaching narratif et ouvrir de nouvelles perspectives.";
     customContent.process = [
-      "Questionnaire préparatoire pour maximiser notre temps ensemble",
       "Séance de 60 minutes en visioconférence",
-      "Document de synthèse pour ancrer vos prises de conscience",
+      "Document de synthèse pour ancrer tes prises de conscience",
       "Option : Suivi WhatsApp pendant 1 semaine",
       "Option : Call de suivi une semaine après"
     ];
     customContent.forWhom = [
-      "Vous souhaitez expérimenter le coaching narratif",
-      "Vous avez un blocage spécifique à explorer",
-      "Vous cherchez une première mise en mouvement"
+      "Tu souhaites expérimenter le coaching narratif",
+      "Tu as un blocage spécifique à explorer",
+      "Tu cherches une première mise en mouvement"
     ];
+    customContent.impactBlocks = [{
+      title: "Ce qui peut changer en 60 minutes :",
+      items: [
+        "Tu cernes ce qui te bloque sur une décision précise — et tu tranches.",
+        "Tu revois un entretien, un message ou une prise de parole que tu dois faire — avec clarté.",
+        "Tu formules une demande, une limite ou une idée qui restait coincée.",
+        "Tu comprends pourquoi tu te sabotes sur un sujet — et ce que tu peux faire dès maintenant.",
+        "Tu ressors avec une action à poser dans les 48h, et tu la poses."
+      ],
+      conclusion: "Ce n'est pas une prise de conscience abstraite.\nC'est un coup de projecteur pour passer à l'action — tout de suite."
+    }];
   } else if (id === "lightwave") {
-    customContent.description = "Un programme en 5 séances pour dépasser ce qui vous freine et créer un changement durable. Une approche progressive, qui vous permet d'explorer, d'ancrer et d'avancer avec clarté.";
+    customContent.description = "Un programme en 5 séances pour dépasser ce qui te freine et créer un changement durable. Une approche progressive, qui te permet d'explorer, d'ancrer et d'avancer avec clarté.";
     customContent.process = [
       "5 séances de 90 min en visioconférence",
-      "Documentation narrative pour ancrer vos prises de conscience",
-      "Exercices narratifs sélectionnés spécialement pour vous",
+      "Documentation narrative pour ancrer tes prises de conscience",
+      "Exercices narratifs sélectionnés spécialement pour toi",
       "Option : Inventaire EQ-i et débriefing: 169€",
       "Option : Suivi WhatsApp entre les séances 110€"
     ];
     customContent.forWhom = [
-      "Vous voulez avancer en profondeur, sans solution toute faite",
-      "Vous êtes prêt·e à investir du temps et de l'énergie dans ce travail",
-      "Vous cherchez un accompagnement structuré et progressif"
+      "Tu veux avancer en profondeur, sans solution toute faite",
+      "Tu es prêt·e à investir du temps et de l'énergie dans ce travail",
+      "Tu cherches un accompagnement structuré et progressif"
     ];
+    customContent.impactBlocks = [{
+      title: "Ce que ça change concrètement dans ton job :",
+      items: [
+        "Tu sais dire non à une demande sans avoir peur de \"te griller\".",
+        "Tu arrêtes de compenser les erreurs des autres — tu responsabilises.",
+        "Tu reprends le lead dans ta fiche de poste, au lieu de subir les priorités des autres.",
+        "Tu expliques clairement ce que tu veux — et les gens l'entendent.",
+        "Tu lances un projet que tu remettais à plus tard depuis des mois.",
+        "Tu t'affirmes sans surjouer — et on commence à venir te chercher, pas juste à te déléguer."
+      ],
+      conclusion: "Lightwave, c'est pour faire de la place à ce que tu veux vraiment construire.\nEt retrouver une posture qui t'appartient."
+    }];
   } else if (id === "lightning") {
-    customContent.description = "Un accompagnement en 10 séances pour transformer en profondeur votre leadership et votre rapport à vous-même. Un espace exigeant et soutenant, conçu pour aller au bout de votre réflexion, affiner votre posture et créer un impact durable.";
+    customContent.description = "Un accompagnement en 10 séances pour transformer en profondeur ton leadership et ton rapport à toi-même. Un espace exigeant et soutenant, conçu pour aller au bout de ta réflexion, affiner ta posture et créer un impact durable.";
     customContent.process = [
       "10 séances individuelles de coaching",
-      "Documentation narrative pour ancrer vos prises de conscience",
+      "Documentation narrative pour ancrer tes prises de conscience",
       "Suivi WhatsApp tout au long du programme*",
       "Inventaire EQ-i Leadership",
-      "2 séances de débriefing spécifiques"
+      "2 séances de débriefing supplémentaires spécifiques"
     ];
     customContent.forWhom = [
-      "Vous voulez aller au bout de votre transformation",
-      "Vous cherchez un accompagnement structurant et exigeant",
-      "Vous voulez développer un leadership aligné, impactant et fluide"
+      "Tu veux aller au bout de ta transformation",
+      "Tu cherches un accompagnement structurant et exigeant",
+      "Tu veux développer un leadership aligné, impactant et fluide"
     ];
+    customContent.impactBlocks = [{
+      title: "Ce que ça change dans ton job...concrètement :",
+      items: [
+        "Tu recadres sans te crisper. Ton équipe sait où tu vas. Et elle suit.",
+        "Tu prends des décisions difficiles sans tourner en boucle trois semaines.",
+        "Tu fais passer ton point de vue au Comex, sans t'adapter à chaque regard.",
+        "Tu tiens une posture claire — même en terrain hostile, même sous pression.",
+        "Tu ne laisses plus tes doutes piloter ton impact : tu choisis ce que tu veux porter.",
+        "Tu redeviens moteur dans les discussions stratégiques. Tu n'exécutes plus, tu penses.",
+        "Tu n'as plus besoin d'en faire trois fois trop pour être respecté·e."
+      ],
+      conclusion: "Lightning, c'est pour celles et ceux qui ont une place à tenir —\net qui veulent la tenir sans se déformer."
+    }];
   }
 
   return (
@@ -108,13 +144,13 @@ export const OfferDetail: React.FC = () => {
       {/* Header with gradient background */}
       <div className="bg-gradient-to-r from-primary to-primary-light text-white py-20">
         <div className="container mx-auto px-4">
-          <Link 
-            to="/" 
+          <HashLink 
+            to="/#offers" 
             className="inline-flex items-center text-white/80 hover:text-white mb-8"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Retour aux offres
-          </Link>
+          </HashLink>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -128,9 +164,10 @@ export const OfferDetail: React.FC = () => {
               {customContent.description}
             </p>
 
-            {/* Lightning-specific content block */}
-            {id === "lightning" && (
+            {/* Impact block */}
+            {customContent.impactBlocks.map((block, blockIndex) => (
               <motion.div
+                key={blockIndex}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -138,18 +175,10 @@ export const OfferDetail: React.FC = () => {
                   rounded-2xl p-8 border border-white/10 max-w-3xl"
               >
                 <h2 className="text-2xl font-display text-white mb-6">
-                  Ce que tu fais différemment après cet accompagnement :
+                  {block.title}
                 </h2>
                 <ul className="space-y-4">
-                  {[
-                    "Tu recadres sans te crisper. Ton équipe sait où tu vas. Et elle suit.",
-                    "Tu prends des décisions difficiles sans tourner en boucle trois semaines.",
-                    "Tu fais passer ton point de vue au Comex, sans t'adapter à chaque regard.",
-                    "Tu tiens une posture claire — même en terrain hostile, même sous pression.",
-                    "Tu ne laisses plus tes doutes piloter ton impact : tu choisis ce que tu veux porter.",
-                    "Tu redeviens moteur dans les discussions stratégiques. Tu n'exécutes plus, tu penses.",
-                    "Tu n'as plus besoin d'en faire trois fois trop pour être respecté·e."
-                  ].map((item, index) => (
+                  {block.items.map((item, index) => (
                     <motion.li
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
@@ -162,8 +191,17 @@ export const OfferDetail: React.FC = () => {
                     </motion.li>
                   ))}
                 </ul>
+                {block.conclusion && (
+                  <div className="mt-8 text-center">
+                    {block.conclusion.split('\n').map((line, i) => (
+                      <p key={i} className="text-xl font-display text-accent-light">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                )}
               </motion.div>
-            )}
+            ))}
           </motion.div>
         </div>
       </div>
@@ -214,27 +252,6 @@ export const OfferDetail: React.FC = () => {
                   <div key={index} className="flex items-start">
                     <Check className="w-5 h-5 text-accent-light mr-4 flex-shrink-0 mt-1" />
                     <p className="text-white/90">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.section>
-
-            {/* Benefits section */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="bg-gradient-to-br from-accent/20 to-accent-light/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-lg"
-            >
-              <h2 className="text-2xl font-display mb-6 flex items-center text-white">
-                <Target className="w-6 h-6 mr-3 text-accent-light" />
-                Bénéfices
-              </h2>
-              <div className="space-y-4">
-                {offer.benefits.map((benefit: string, index: number) => (
-                  <div key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-accent rounded-full mr-4 mt-2 flex-shrink-0" />
-                    <p className="text-white/90">{benefit}</p>
                   </div>
                 ))}
               </div>
