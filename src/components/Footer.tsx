@@ -13,8 +13,12 @@ export const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Logo et description */}
           <div className="md:col-span-1">
-            <Link to="/" className="text-2xl font-display text-white mb-4 inline-block">
-              Jennifer Perrault
+            <Link to="/" className="block mb-4">
+              <img 
+                src="/LogoNaharaComplet.png" 
+                alt="Nahara Coaching" 
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-white/70 mb-6">
               Coaching narratif et intelligence émotionnelle pour transformer vos blocages en leviers.
@@ -136,6 +140,18 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Certifications and Affiliations Banner */}
+        <div className="border-t border-white/10 pt-8 mb-8">
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            <img src="/LogoHEC.png" alt="Certification HEC" className="h-12 w-auto" />
+            <img src="/LogoEssec.png" alt="Certification ESSEC" className="h-12 w-auto" />
+            <img src="/LOGO-EQ360.jpeg" alt="Certification EQ360" className="h-12 w-auto" />
+            <img src="/LOGO-EQ-i.png" alt="Certification EQ-i" className="h-12 w-auto" />
+            <img src="/LogoAICC.png" alt="Membre AICC" className="h-12 w-auto" />
+            <img src="/LogoArtisans.png" alt="Membre Artisans" className="h-12 w-auto" />
           </div>
         </div>
 

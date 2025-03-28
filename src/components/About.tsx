@@ -28,7 +28,7 @@ export const About: React.FC = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-light/20 rounded-2xl transform group-hover:scale-105 transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                 <img
-                  src="https://static.wixstatic.com/media/cd3c1f_57647e95c89843259802a92eac7694b7~mv2.jpeg/v1/fill/w_1258,h_1920,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/cd3c1f_57647e95c89843259802a92eac7694b7~mv2.jpeg"
+                  src="/Photo Coach.jpg"
                   alt="Portrait professionnel de coach"
                   className="rounded-2xl shadow-2xl object-cover aspect-[3/4] w-full transform transition-all duration-500 group-hover:scale-105"
                 />

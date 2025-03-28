@@ -109,7 +109,7 @@ export const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Calendar className="w-4 h-4 mr-2" />
-                <span>Réserver un appel</span>
+                <span>Réserve ton coaching gratuit</span>
               </a>
             </nav>
           </div>
