@@ -13,10 +13,16 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h1 className="text-5xl md:text-6xl font-display mb-6 leading-tight">
+          {/* Hidden H1 for SEO */}
+          <h1 className="sr-only">
+            Coaching professionnel, coaching de carrière et leadership – Nahara Coaching
+          </h1>
+          
+          {/* Visible creative heading */}
+          <h2 className="text-5xl md:text-6xl font-display mb-6 leading-tight">
             Et si tes blocages tenaient tes rêves à l'ombre ?
             <span className="block text-accent-light">Ensemble, faisons la lumière.</span>
-          </h1>
+          </h2>
           
           <p className="text-xl md:text-2xl mb-12 text-gray-200">
             Tu t'investis sans relâche, tu analyses, tu cherches des solutions… 
