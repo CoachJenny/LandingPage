@@ -22,13 +22,14 @@ export const Header: React.FC = () => {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="block">
+          {/* Logo and Name */}
+          <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/public/LogoNahara.png" 
               alt="Nahara Coaching" 
               className="h-8 w-auto"
             />
+            <span className="text-xl font-display text-white">Jennifer Perrault</span>
           </Link>
 
           {/* Navigation - Desktop */}
