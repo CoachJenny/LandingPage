@@ -2,24 +2,49 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/LogoNahara.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1" />
     <meta name="theme-color" content="#060644" />
-    <title>Coaching Narratif & Intelligence Émotionnelle</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Coach de carrière & leadership – Nahara Coaching | Jennifer Perrault</title>
+    <meta name="description" content="Coach professionnelle certifiée, j'accompagne les managers, cadres et entrepreneurs à transformer leurs blocages en leviers grâce au coaching de carrière, de leadership et de posture managériale." />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Coach de carrière & leadership – Nahara Coaching | Jennifer Perrault" />
+    <meta property="og:description" content="Coach professionnelle certifiée, j'accompagne les managers, cadres et entrepreneurs à transformer leurs blocages en leviers grâce au coaching narratif et l'intelligence émotionnelle." />
+    <meta property="og:image" content="/LogoNaharaComplet.png" />
+    <meta property="og:url" content="https://nahara-coaching.com" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Coach de carrière & leadership – Nahara Coaching | Jennifer Perrault" />
+    <meta name="twitter:description" content="Coach professionnelle certifiée, j'accompagne les managers, cadres et entrepreneurs à transformer leurs blocages en leviers." />
+    <meta name="twitter:image" content="/LogoNaharaComplet.png" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="keywords" content="coaching de carrière, coaching professionnel, coaching de leadership, coaching narratif, intelligence émotionnelle, coach certifié HEC, coaching cadres, coaching managers, coaching Paris" />
+    <meta name="author" content="Jennifer Perrault" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="fr" />
+    <meta name="geo.region" content="FR-75" />
+    <meta name="geo.placename" content="Paris" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nahara-coaching.com" />
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Patch pour les erreurs JavaScript -->
+    
+    <!-- Error Patches -->
     <script src="/errorPatches.js"></script>
     <script>
-      // Patch préventif pour les erreurs courantes
       window.cb = {
         updateFeatures: function() {},
         unmount: function() {}
       };
-      
-      // Patch pour les erreurs d'événements
       window.events = { t: { clear: function() {} } };
-      
-      // Patch pour setToggle
       if (!Object.prototype.setToggle) {
         Object.defineProperty(Object.prototype, 'setToggle', {
           value: function() { return this; },
@@ -27,8 +52,6 @@
           configurable: true
         });
       }
-      
-      // Intercepter les erreurs globales
       window.addEventListener('error', function(event) {
         if (event.error && (
           event.error.toString().includes('s.mount is not a function') ||
@@ -39,6 +62,69 @@
           return false;
         }
       }, true);
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Nahara Coaching - Jennifer Perrault",
+        "image": "/LogoNaharaComplet.png",
+        "description": "Coach professionnelle certifiée, j'accompagne les managers, cadres et entrepreneurs à transformer leurs blocages en leviers grâce au coaching de carrière, de leadership et de posture managériale.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Paris",
+          "addressRegion": "Île-de-France",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "48.8566",
+          "longitude": "2.3522"
+        },
+        "url": "https://nahara-coaching.com",
+        "telephone": "+33648144945",
+        "priceRange": "€€€",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+          "https://www.linkedin.com/in/jennifer-perrault-coach"
+        ]
+      }
+    </script>
+    
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "En quoi consiste un coaching de carrière ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un coaching de carrière t'aide à prendre du recul sur ton parcours professionnel, identifier tes freins, clarifier tes objectifs et poser des actions concrètes. Il peut porter sur une reconversion, une prise de poste, une montée en responsabilité ou un besoin de sens."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "À qui s'adresse le coaching professionnel proposé ici ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Il s'adresse aux managers, cadres, entrepreneurs et indépendants qui veulent incarner un leadership plus fluide, retrouver du souffle dans leur carrière, ou prendre une nouvelle direction sans se perdre."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la différence entre les offres Lightning, Lightwave et Étincelle ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lightning est un coaching complet pour transformer ton leadership. Lightwave t'aide à retrouver du mouvement sur 2 à 3 mois. Étincelle est une séance unique pour débloquer une situation ponctuelle."
+            }
+          }
+        ]
+      }
     </script>
   </head>
   <body>

@@ -6,16 +6,20 @@ import { ContactForm } from './ContactForm';
 
 const faqs = [
   {
-    question: "Comment savoir si cet accompagnement est fait pour moi ?",
-    answer: "Si tu ressens une frustration, une envie de mouvement, mais que quelque chose te freine sans que tu saches exactement quoi, alors cet accompagnement peut t'apporter des clés essentielles.\n\nMon approche est faite pour toi si tu veux mieux comprendre tes schémas, clarifier tes décisions et avancer avec plus d'alignement."
+    question: "En quoi consiste un coaching de carrière ?",
+    answer: "Un coaching de carrière t'aide à prendre du recul sur ton parcours professionnel, identifier tes freins, clarifier tes objectifs et poser des actions concrètes.\n\nIl peut porter sur une reconversion, une prise de poste, une montée en responsabilité ou un besoin de sens."
   },
   {
-    question: "Combien de temps dure un accompagnement ?",
-    answer: "Cela dépend de l'offre choisie :\n\nÉtincelle : Une séance unique pour un premier éclairage.\n\nLightwave : Un cycle de 5 séances sur 2 à 3 mois.\n\nLightning : Un accompagnement profond sur 10 séances, réparties sur 4 à 6 mois."
+    question: "À qui s'adresse le coaching professionnel proposé ici ?",
+    answer: "Il s'adresse aux managers, cadres, entrepreneurs et indépendants qui veulent incarner un leadership plus fluide, retrouver du souffle dans leur carrière, ou prendre une nouvelle direction sans se perdre."
   },
   {
-    question: "Quels résultats puis-je attendre ?",
-    answer: "Chaque personne vit une transformation unique, mais les bénéfices incluent :\n\n• Une meilleure compréhension de tes blocages et de tes leviers d'action\n• Un gain de clarté sur tes décisions et ton positionnement\n• Un leadership plus affirmé et plus fluide\n• Une relation plus apaisée avec tes émotions et celles des autres"
+    question: "Quelle est la différence entre les offres Lightning, Lightwave et Étincelle ?",
+    answer: "Lightning est un coaching complet pour transformer ton leadership.\n\nLightwave t'aide à retrouver du mouvement sur 2 à 3 mois.\n\nÉtincelle est une séance unique pour débloquer une situation ponctuelle."
+  },
+  {
+    question: "Est-ce que c'est comme un bilan de compétences ?",
+    answer: "Non, ici le coaching est plus fluide, sur-mesure, orienté changement concret et prise de conscience. Il n'y a pas de trame figée, mais un chemin pensé pour toi."
   },
   {
     question: "Comment se déroulent les séances ?",
